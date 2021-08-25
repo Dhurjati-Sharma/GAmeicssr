@@ -11,7 +11,7 @@ displaysavealert = false;
 //password
 requirepassword = false;
 //recaptha
-recaptha = false;
+recaptha = true;
 //login code
 logincode = "k";
 //errorsolver
