@@ -1,0 +1,298 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css');
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css');
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+display: none;}
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+html,body{
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width:100%;
+    height:100%;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select: none;
+
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hide{
+    display: none;
+}
+input:-webkit-autofill {
+-box-shadow: 0 0 0 1000px white inset !important;
+}
+body{
+    background-image: url('https://th.bing.com/th/id/R.d2f332f24e594f20ac1b8c5e1bd976e1?rik=rGi3szaTaOuNVA&riu=http%3a%2f%2ffullhdwall.com%2fwp-content%2fuploads%2f2016%2f03%2f3D-Best-Background.jpg&ehk=%2f%2f3tEnS8z%2bGI0pUwV0Ndc33iwJ8g76kvh9LSMwfiHR4%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.round{
+    border-radius: 100px;
+}
+.custom{
+    height: 40px;
+    width: 400px;
+}
+.circle{
+    height: 100px;
+    width: 100px;
+}
+.navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+  }
+   
+  .dropdown-toggle::after {
+     transition: transform 0.15s linear; 
+  }
+   
+  .show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+  }
+.customalert{
+    height: 60px;
+}
+.custommodal{
+    height: 23pc;
+    width: 26pc;
+}
+.roundmodal{
+    border-radius: 20px;
+}
+.yes{
+    cursor: pointer;
+}
+.no{
+    cursor: default;
+}
+.customd{
+    height: 30px;
+    width: 24pc;
+}
+.my-6{
+    margin-top: 50px!important;
+}
+.my-10{
+    margin-top: 80px!important;
+
+}
+.my-7{
+        margin-top: 90px!important;
+
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+button{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.myxyz{
+    border-radius: 30px;
+}
+.text-right{
+    text-align: right!important;
+}
+.text-left{
+    text-align: left!important;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 40%;
+    left: 0px;
+}
+@keyframes blink {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
+.saving span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.img{
+    background-image: url('https://wallpapercave.com/wp/wp1910066.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.modimg{
+    background-image: url('https://cdn.pixabay.com/photo/2016/01/08/18/00/antelope-canyon-1128815_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form-text{
+    color: white;
+}
+html,body{
+    background-image: url('https://getwallpapers.com/wallpaper/full/f/6/5/13338.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn-close{
+    color: white;
+}
+.modimgd{
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dmodimgd{
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.divimg{
+    background-image: url('https://media.istockphoto.com/photos/marble-rock-texture-blue-ink-pattern-liquid-swirl-paint-white-dark-picture-id1254797133?b=1&k=6&m=1254797133&s=170667a&w=0&h=AD9EjdiOmyckVsAUzo-_XMZ7I6Zk0wou50V-wQfmR_Y=');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.alert{
+    border: transparent;
+}
+#f{
+    cursor: progress;
+}
+.bi-info-circle:hover{
+    fill: red;
+}
+.bi-arrow-left-short:hover{
+    fill: red;
+}
+.bi-arrow-left-short{
+    fill: white;
+    cursor: pointer;
+}
+html,body{min-height: 100vh;height: 100vh;}
+@media (min-width: 1200px) { html,body{overflow: hidden;} }
+
+@media (min-width: 576px) { html,body{overflow: auto;} }
+
+@media (min-width: 768px) { html,body{overflow: auto;} }
+
+@media (min-width: 992px) { html,body{overflow: auto;}}
+.rotate {
+    animation: rotation 2s;
+  }
+  
+  .linear {
+    animation-timing-function: linear;
+  }
+  
+  .infinite {
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+.hide{
+    display: none;
+}
+.mymymymymyym{
+    margin-top: 80px
+}
+.ff{
+    border-radius: 10px;
+}
+.col-sm-4:before,
+.col-sm-8:before {
+  content: '';
+  width: 0;
+}
+
+.col-sm-4:before,
+.col-sm-8:before,
+.ib {
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.col-sm-4:before {
+  padding-top: 100%;
+  /* makes expand to a square */
+}
+
+.col-sm-8:before {
+  padding-top: 50%;
+  /* makes a rectangle half the height of a square */
+}
+
+[class^="col"] {
+  white-space: nowrap;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 5px white;
+  padding: 0;
+  text-align: center;
+}
+
+.row {
+  color: white;
+  text-shadow: 0 0 black, 0 0 2px black;
+}
+
+.col-sm-4 {
+  background: gray;
+}
+.df{
+    border-radius: 50px;
+}

@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+        <link rel="manifest" href="JS/manifest.json">
+    <script src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/GAME.JS"></script>
+    <script src="JS/EDIT.JS"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/SERVER.JS"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/JOIN.JS"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/url.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/color/50/000000/play-games.png" type="image/x-icon">
+    <script>
+        // slight update to account for browsers not supporting e.which
+
+        function disableF5(e) { if ((e.which || e.keyCode) == 116) e.preventDefault(); };
+        // To disable f5
+        /* jQuery < 1.7 */
+        $(document).bind("keydown", disableF5);
+        /* OR jQuery >= 1.7 */
+        $(document).on("keydown", disableF5);
+
+        // To re-enable f5
+        /* jQuery < 1.7 */
+        $(document).unbind("keydown", disableF5);
+        /* OR jQuery >= 1.7 */
+        $(document).off("keydown", disableF5);
+
+    </script>
+    <script>  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })</script>
+</head>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+    </symbol>
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+    </symbol>
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path
+            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </symbol>
+
+</svg>
+<noscript>
+    <title>Error: Javascript is not enabled!</title>
+    <style>
+        #nossc{
+            -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select: none;
+        }
+        #tobehiddennow{
+            display: none;
+        }
+        #f {
+            animation: cssAnimation 0s 3s forwards;
+            visibility: visible;
+        }
+
+        @keyframes cssAnimation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        #nossc {
+            animation: dd 0s 3s forwards;
+            visibility: hidden;
+        }
+
+        @keyframes dd {
+            to {
+                visibility: visible;
+            }
+        }
+    </style>
+    <style>
+        .hi{
+            color:white;}
+    .hi:hover{
+        color: red;
+    }
+        </style>
+    <div ondragstart="return false;" ondrop="return false;" id="nossc">
+
+        <div class="container bg-light round my-3 circle text-center dmodimgd">
+            <img class="my-4 mx-auto" src="https://img.icons8.com/color/50/000000/play-games.png">
+        </div>
+        <div class="container text-center bg-light round custom modimgd">
+                <h3 class="my-4 mx-auto"">Error: JS is not enabled!</h3>
+            </div>
+            <div class="container myxyz text-light bg-light my-3 p-3 divimg">
+
+
+
+<div class="text-center mb-3 my-4">
+    <h2 class="mb-3 "><strong> Javascript Is Not Enabled In Your Browser!</strong></h2>
+</div>
+<h5 class="mx-5 my-4 mb-3 text-center">
+    The Game Will Not Work Without JS. To Know How To Enable Js <a class="hi" target="_blank" href="https://enable-javascript.com/">Click Here</a>. Please Contact For Further Help. After You Enable Js Please Click On The Retry Button.<div class="text-center my-3">
+        <a href="/" class="btn btn-danger btn-lg my-3"
+            style="border-radius: 20px;">
+            Retry <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" fill="currentColor"
+                class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                <path
+                    d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8z" />
+                <path
+                    d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6z" />
+            </svg> </a>
+    </div>
+
+</div>
+    </div>
+</noscript>
+
+<body class="mx-auto mx-auto" style="margin: auto;">
+    <div class="modal fade text-dark mx-auto ms-auto myxyz" id="exampleModal" tabindex="-1" data-bs-backdrop="static"
+        data-bs-keyboard="false" aria-labelledby="exampleModalLabel"
+        style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="modalt">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-bar-chart-fill my-0  mb-1" viewBox="0 0 16 16">
+                            <path
+                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                        </svg> Analytics/Information</h5>
+                    <a type="button" class="btn-close myxyz" id="myhellclose" data-bs-dismiss="modal"
+                        aria-label="Close"></a> <a type="button" class="btn-close myxyz" id="myhellclosed"
+                        href="points.html" style="display: none;" aria-label="Close"></a>
+                </div>
+                <div class="modal-body">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-person-plus my-0 mb-1" viewBox="0 0 16 16">
+                        <path
+                            d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                        <path fill-rule="evenodd"
+                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                    </svg><strong style="font-size: 18px;"> Joined Information:</strong>
+                    <div class="mx-1">
+                        <div class="mb-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-person-fill my-0 mb-1" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>
+                            <Strong title="Username" style="font-size: 20px;">Username:</Strong>
+                            <span id="analyticname" style="font-size: 20px;"></span>
+                        </div>
+                        <div class="mb-1" id="dhujtjtfhyf" style="display:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-key-fill my-0 mb-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg> <Strong title="Password" style="font-size: 20px;">Password:</Strong>
+                            <span id="passname" title="" style="font-size: 20px;"></span>
+                        </div>
+                    </div>
+                    <div class="my-2">
+
+                        <div class="mb-1">
+                            <div class="my-2 mb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-sd-card my-0 mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.25 3.5a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M5.914 0H12.5A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5V3.914c0-.398.158-.78.44-1.06L4.853.439A1.5 1.5 0 0 1 5.914 0zM13 1.5a.5.5 0 0 0-.5-.5H5.914a.5.5 0 0 0-.353.146L3.146 3.561A.5.5 0 0 0 3 3.914V14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13z">
+                                    </path>
+                                </svg><strong class="my-0" style="font-size:18px;"> Storage Information:</strong>
+                            </div>
+                            <div class="mb-1 mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    fill="currentColor" class="bi bi-sd-card my-0 mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.25 3.5a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2zm2 0a.75.75 0 0 0-1.5 0v2a.75.75 0 0 0 1.5 0v-2z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M5.914 0H12.5A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5V3.914c0-.398.158-.78.44-1.06L4.853.439A1.5 1.5 0 0 1 5.914 0zM13 1.5a.5.5 0 0 0-.5-.5H5.914a.5.5 0 0 0-.353.146L3.146 3.561A.5.5 0 0 0 3 3.914V14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13z">
+                                    </path>
+                                </svg>
+                                <strong style="font-size: 20px;" title="Localstorage Is supported">Localstorage
+                                    Is supported:</strong>
+                                <span id="ocala" style="font-size: 20px;" title="">True</span>
+                            </div>
+                            <div class="mb-1 mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    fill="currentColor" class="bi bi-save2 my-0 mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v4.5h2a.5.5 0 0 1 .354.854l-2.5 2.5a.5.5 0 0 1-.708 0l-2.5-2.5A.5.5 0 0 1 5.5 6.5h2V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z">
+                                    </path>
+                                </svg>
+                                <strong style="font-size: 20px;" title="Username Is saved">Username Is
+                                    saved:</strong>
+                                <span id="sfgty" style="font-size: 20px;" title="Username Is saved: False">False</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-controller my-0 mb-1" viewBox="0 0 16 16">
+                            <path
+                                d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" />
+                            <path
+                                d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z" />
+                        </svg><strong style="font-size:18px;"> Game Information:</strong>
+                    </div>
+                    <div class="mb-1 mx-1" style="display: inline;"><img src="assets/icons8-chair-60.png"
+                            class="my-0 mb-2" width="22" height="22">
+                        <strong style="font-size: 20px;" title="Chairs Remaining">Chairs Remaining:
+                            <span id="noneneonenenoneien"> None</span>
+
+                        </strong>
+                        <img id="chair1" src="assets/icons8-chair-60.png" class="my-0 mb-2 mx-1 rotate linear infinite"
+                            width="18" height="18">
+                        <img id="chair2" src="assets/icons8-chair-60.png" class="my-0 mb-2 mx-1 rotate linear infinite"
+                            width="18" height="18">
+                        <img id="chair3" src="assets/icons8-chair-60.png" class="my-0 mb-2 mx-1 rotate linear infinite"
+                            width="18" height="18">
+                    </div>
+                    <div class="mb-1 mx-1"><img src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/attempt.png" class="my-0 mb-2" width="22" height="22">
+                        <strong style="font-size: 20px;" title="Incorrect Attempts">Incorrect Attempts:
+
+                        </strong> <span id="qatempts" style="font-size:20px;">0</span>
+
+                    </div>
+                    <div class="mb-1 mx-1"><img src="https://cdn.jsdelivr.net/gh/Dhurjati-Sharma/Hello@main/attempt.png" class="my-0 mb-2" width="22" height="22">
+                        <strong style="font-size: 20px;" title="Correct Attempts">Correct Attempts:
+
+                        </strong> <span id="hepmemememememem" style="font-size:20px;">0</span>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="myidop" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <a type="button" id="myidopp" href="points.html" style="display: none;"
+                        class="btn btn-primary">Close</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="f" class="overlay" title="Reading Application From Configuration File ..."
+        style="height: 100%;width: 100%;">
+        <div class="d-flex justify-content-center" style="display: block;">
+            <div class="spinner-border text-light" role="status" style="width: 7rem; height: 7rem;  z-index: 20; ">
+            </div>
+
+        </div>
+        <div class="my-3 text-light text-center shadow-lg" id="tobehiddennow">
+            <div class="container bg-dark my-3" style="width: 700%;border-radius: 20px;padding: 1px;">
+                <h5><strong class="my-3 text-light" id="cccccccccc">Reading Application From Configuration File <span
+                            class="saving"><span>.</span><span>.</span><span>.</span></span>
+                        <script>
+                            $(document).ready(function () {
+                                if (body) {
+                                } else {
+                                    alert("Error While Accessing Application")
+                                }
+                            });
+                        </script>
+
+                    </strong></h5>
+            </div>
+            <div class="text-center">
+                <div class="container bg-danger p-3" id="mainididididid" title="Errors Were Detected. Resolving Now"
+                    style="width: 700%;border-radius: 20px;display: none;">
+                    <h5> <strong class="my-4 mb-0">Errors That Were Detected in Reading
+                            Configuration File:</strong> </h5>
+                    <div class="my-3">
+                        <div class="my-0" id="errorsdiplay1" style="display: none;">
+
+                            <h5><strong class=" text-light">Error: You Cannot Enable Captcha While Password is Enabled.
+                                    Resolving Temporarily <span
+                                        class="saving"><span>.</span><span>.</span><span>.</span></span>
+
+                                </strong></h5>
+                        </div>
+                        <div class="my-0" id="errorsdiplay2" style="display: none;">
+                            <h5><strong class=" text-light">Error: Please Set An Alternate Title For The Game. Resolving
+                                    Temporarily <span class="saving"><span>.</span><span>.</span><span>.</span></span>
+                                    <script>
+                                        $(document).ready(function () {
+                                            if (jQuery) {
+                                            } else {
+                                                alert("Error While Accessing Application")
+                                            }
+                                        });
+                                    </script>
+                                </strong></h5>
+                        </div>
+                        <div class="my-0" id="errorsdiplay3" style="display: none;">
+                            <h5><strong class=" text-light">Error: Please Set A Title For The Game. Resolving
+                                    Temporarily <span class="saving"><span>.</span><span>.</span><span>.</span></span>
+
+                                </strong></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="g" style="display: none;">
+        <div id="alerts">
+            <div class="alert alert-warning alert-dismissible fade show round mx-3 my-1 customa img text-light"
+                id="loggedin" style="display: none;" role="alert">
+                <strong><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg> Sucess:</strong>
+                You Have Succesfully Joined With Username "<span id="rmyname"></span>" !
+                <button type="button" class="btn-close btn-close-white round" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show round mx-3 my-1 text-light modimg customad"
+                style="display: none;" id="Invalid" role="alert">
+                <strong><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg> Error:</strong>
+                You Have Entered An Invalid Code !
+                <button type="button" class="btn-close btn-close-white round"
+                    onclick="document.getElementById('Invalid').style.display='none'" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show round mx-3 my-1 modimg text-light customad"
+                style="display: none;" id="Invalido" role="alert">
+                <strong><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg> Error:</strong>
+                Please Enter Your Name !
+                <button type="button" class="btn-close btn-close-white round"
+                    onclick="document.getElementById('Invalido').style.display='none'" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show round mx-3 my-1 modimg text-light customad"
+                style="display: none;" id="cp" role="alert">
+                <strong><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg> Error:</strong>
+                Please Enter the captcha correctly!
+                <button type="button" class="btn-close btn-close-white round"
+                    onclick="document.getElementById('cp').style.display='none'" aria-label="Close"></button>
+            </div>
+        </div>
+        <div id="configs">
+            <div class="container bg-light round my-3 circle text-center dmodimgd">
+                <img class="my-4 mx-auto" src="https://img.icons8.com/color/50/000000/play-games.png">
+            </div>
+            <div class="container text-center bg-light round custom modimgd">
+                <h3 class="my-4 mx-auto" id="teach"></h3>
+            </div>
+        </div>
+
+        <div class="container custommodal roundmodal my-3 p-3 bg-light modimg text-light" id="loginmodalandconfig">
+            <div class="my-1">
+                <div class="text-center mb-3">
+                    <div class="container text-center bg-dark round customd text-dark dmodimgd">
+                        <h5>Fill Details to join <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                <path fill-rule="evenodd"
+                                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                            </svg></h5>
+                    </div>
+                </div>
+
+                <!-- name -->
+                <div class="mb-3"> <label for="name" class="form-label"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg> Enter Your Name:</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-person-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg></span>
+
+                        <input type="text" class="form-control" name="username" maxlength="10"
+                            placeholder="Enter Your Name:" oninput="myme()" id="name" name="password"
+                            aria-describedby="emailHelp" required>
+                        <span class="input-group-text yes" title="Enter Name To Clear" onclick="c()" id="new"><svg
+                                onclick="c()" title="Enter Name To Clear" id="hec" xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-eraser-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                            </svg> </span>
+
+                    </div>
+                    <div id="emailHelp" for="name" class="form-text">We'll never share your name with anyone.</div>
+                </div>
+
+                <!-- password -->
+                <div class="mb-1" id="bypass">
+
+                    <label for="coupon" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg> Enter The Password For Joining:</label>
+                    <div class="input-group"><span class="input-group-text" id="basic-addon1"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg>
+                        </span>
+                        <input type="password" class="form-control" id="coupon" placeholder="Enter Your Password:"
+                            title="Enter Code To Clear" maxlength="22" oninput="lol()">
+                        <span class="input-group-text yes" onclick="i()" id="cls"><svg title="Enter Code To Clear"
+                                onclick="i()" id="my" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                            </svg> </span>
+                    </div>
+                </div>
+            </div>
+            <!-- others -->
+            <!-- save --><label for="inputText" id="rc" class="form-label"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                </svg> Please Type Captcha Below:
+            </label>
+            <div class="text-center mb-0" id="recpa">
+                <div class="row g-2">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-lock-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                    </svg></span>
+                                <input type="number" max="4" class="form-control" id="inputText" placeholder=".com"
+                                    value="">
+                                <span onclick="document.getElementById('inputText').value='';generateCaptcha();  
+                                " class="input-group-text yes" title="Regenerate Captcha" id="basic-addon1"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                                        <path
+                                            d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8z" />
+                                        <path
+                                            d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6z" />
+                                    </svg></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tdoddo">
+                <div class="my-2 mb-3 form-check" id="dad">
+                    <input type="checkbox" class="form-check-input-lg " onclick="saveinbrowser()" id="saveinbr">
+                    <label class="form-check-label" id="xyz">Save My Name In This
+                        Browser.</label>
+
+                </div>
+                <div class="my-2 mb-3 form-check" id="mom" style="display:none;">
+                    <input type="checkbox" class="form-check-input " onclick="delbrowser()" id="dsaveinbr">
+                    <label class="form-check-label">Delete My Name From This
+                        Browser.</label>
+                </div>
+            </div>
+            <!-- delete -->
+            <div class="my-2 mb-3" title="Information" style="display: none;" id="ft">
+                <p class="my-0 mb-0">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <strong>Sucess:</strong> Your Name Is Stored!
+                </p>
+            </div>
+            <div class="my-2 mb-3" title="Information" style="display: none;" id="ftt">
+                <p class="my-0 mb-0">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <strong>Sucess:</strong> Your Name Is deleted!
+                </p>
+            </div>
+            <div class="my-2 mb-3" title="Alert" style="display: none;" id="something">
+                <p class="my-0 mb-0">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg>
+                    <strong>Oops:</strong> Your teacher has disabled saving option
+                </p>
+            </div>
+            <div class="my-2 mb-3" title="Warning" style="display: none;" id="local">
+                <p class="my-0 mb-0">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                        <use xlink:href="#exclamation-triangle-fill" />
+                    </svg>
+                    <strong>Oops:</strong> Storage is not supported in this browser
+                </p>
+            </div>
+
+
+
+            <div class="text-center" id="joinfucntionfjfbf">
+                <button style="border-radius: 10px; " id="localstorgesavpoints" onclick="location.href='points.html'"
+                    title="Recent Game Score
+" class="btn btn-danger"> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cash-register"
+                        width="16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="svg-inline--fa fa-cash-register fa-w-16 fa-3x">
+                        <path fill="currentColor"
+                            d="M511.1 378.8l-26.7-160c-2.6-15.4-15.9-26.7-31.6-26.7H208v-64h96c8.8 0 16-7.2 16-16V16c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96v64H59.1c-15.6 0-29 11.3-31.6 26.7L.8 378.7c-.6 3.5-.9 7-.9 10.5V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32v-90.7c.1-3.5-.2-7-.8-10.5zM280 248c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16zm-32 64h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16zm-32-80c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16zM80 80V48h192v32H80zm40 200h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16zm16 64v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16zm216 112c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h176c4.4 0 8 3.6 8 8v16zm24-112c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16zm48-80c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16z"
+                            class=""></path>
+                    </svg>
+                    Recent Game Score
+                </button>
+                <button type="submit" id="b" onclick="chk();fill();" title="Join" class="btn btn-danger"
+                    style="border-radius: 10px;">Join <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg></button>
+                <button style="margin-top: 80px;border-radius: 10px;" id="aaaaaaaaa" onclick="runnocode();fill();"
+                    title="Join" class="btn btn-danger">Join <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg></button>
+                <button style="margin-top: 80px;border-radius: 10px;display: none;" id="onyforrcpaec"
+                    onclick="bhbbhbbhbbhbbh();fill();" title="Join" class="btn btn-danger ">Join <svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg></button>
+
+
+
+            </div>
+        </div>
+        <div class="container myxyz bg-light my-3 p-3 text-light divimg" id="op" style="display: none; ">
+            <div class="d-flex align-items-center"><svg data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi yes bi-info-circle mx-2 " viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                <button type="button" class="btn-close btn-close-black ms-auto myxyz mx-1" onclick="exit();"></button>
+
+            </div>
+
+            <div class="text-center">
+                <div class="bg-dark mx-4 text-light p-2" style="border-radius: 24px;">
+                    <div id="someid">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <h5 class="my-1"><strong>Welcome <span id="mynameis"></span></strong></h5>
+                    </div>
+                </div>
+                <h5 class="my-3"><strong>Instruction To Play This Game:</strong></h5>
+            </div>
+            <h5 class="mx-5 my-1" id="insrtuc">
+
+            </h5>
+            <div class="text-center my-3">
+                <button class="btn btn-danger btn-lg" onclick="platfunc()" style="border-radius: 20px;">
+                    Play <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" fill="currentColor"
+                        class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg> </button>
+            </div>
+
+        </div>
+        <div class="container myxyz text-light bg-light my-3 p-3 divimg" id="xx" style="display: none; ">
+            <div class="d-flex align-items-center"><svg data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi yes bi-info-circle mx-2 " viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                <button type="button" class="btn-close btn-close-black ms-auto myxyz mx-1" onclick="exit();"></button>
+
+            </div>
+
+
+
+            <div class="text-center ">
+                <div class="bg-dark mx-4 text-light p-2" style="border-radius: 24px;">
+                    <div id="dsomeid">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <h5 class="my-1"><strong>Welcome <span id="mynameisd"></span></strong></h5>
+                    </div>
+                </div>
+            </div>
+            <h5 class="mx-3 my-3 text-center">
+                <strong>Unscramble the letter: <span id="firw"></span></strong>
+            </h5>
+            <div class="text-left my-2 mx-3" style="justify-content:left; display:block;">
+                <div class=" text-left mx-2" style="width:400px;">
+                    <label for="cq1"><img
+                            src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" />
+                        Answer The Question</label>
+                    <div class="input-group my-2 mb-2">
+                        <span class="input-group-text " id="basic-addon1"><img
+                                src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" /></span>
+                        <input type="text" class="form-control" placeholder="Answer" aria-label="Username" id="cq1"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="text-right my-3">
+                    <div class="text-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-lightbulb my-3" viewBox="0 0 16 16">
+                            <path
+                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+                        </svg>
+                        <div class="hints" style="display: inline-block;"> <strong class="my-3"
+                                title="Hint">Hint:</strong> <span title="Hint" id="hint2" class="my-3"></span> </div>
+                        <span class="hide"></span>
+                    </div>
+                    <div style="display: inline-block;width: 100%;">
+                        <div class="text-right my-0 mb-0 mx-5">
+                            <div class="mx-2">
+                                <img src="Assets/icons8-chair-64.png" style="opacity: 0;" width="20" height="20" />
+                            </div>
+                            <div class="text-right my-1">
+                                <button title="Check" class="btn btn-danger btn-lg" onclick="chkq1ofgame()"
+                                    style="border-radius: 20px;">
+                                    Check <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28"
+                                        fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container myxyz text-light bg-light my-3 p-3 divimg" id="yy" style="display: none; ">
+            <div class="d-flex align-items-center"><svg data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi yes bi-info-circle mx-2 " viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                <button type="button" class="btn-close btn-close-black ms-auto myxyz mx-1" onclick="exit();"></button>
+
+            </div>
+
+
+
+            <div class="text-center ">
+                <div class="bg-dark mx-4 text-light p-2" style="border-radius: 24px;">
+                    <div id="dsomeidd">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <h5 class="my-1"><strong>Welcome <span id="mynameisdd"></span></strong></h5>
+                    </div>
+                </div>
+            </div>
+            <h5 class="mx-3 my-3 text-center">
+                <strong>Unscramble the letter: <span id="q2q2"></span></strong>
+            </h5>
+            <div class="text-left my-2 mx-3" style="justify-content:left; display:block;">
+                <div class=" text-left mx-2" style="width:400px;">
+                    <label for="cq2"><img
+                            src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" />
+                        Answer The Question</label>
+                    <div class="input-group my-2 mb-2">
+                        <span class="input-group-text " id="basic-addon1"><img
+                                src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" /></span>
+                        <input type="text" class="form-control" placeholder="Answer" aria-label="Username" id="cq2"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="text-right my-3">
+                    <div class="text-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-lightbulb my-3" viewBox="0 0 16 16">
+                            <path
+                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+                        </svg>
+                        <div class="hints" style="display: inline-block;"> <strong class="my-3"
+                                title="Hint">Hint:</strong> <span title="Hint" id="mainhint" class="my-3"></span> </div>
+                        <span class="hide"></span>
+                    </div>
+                    <div style="display: inline-block;width: 100%;">
+                        <div class="text-right my-0 mb-0 mx-5">
+                            <div class="mx-2">
+                                <img src="Assets/icons8-chair-64.png" style="opacity: 0;" width="10" height="10" />
+                            </div>
+                            <div class="text-right my-1">
+                                <button title="Check" class="btn btn-danger btn-lg" onclick="chkq2ofgame()"
+                                    style="border-radius: 20px;">
+                                    Check <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28"
+                                        fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container myxyz text-light bg-light my-3 p-3 divimg" id="zz" style="display: none; ">
+            <div class="d-flex align-items-center"><svg data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi yes bi-info-circle mx-2 " viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                <button type="button" class="btn-close btn-close-black ms-auto myxyz mx-1" onclick="exit();"></button>
+
+            </div>
+
+
+
+            <div class="text-center ">
+                <div class="bg-dark mx-4 text-light p-2" style="border-radius: 24px;">
+                    <div id="dddd">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <h5 class="my-1"><strong>Welcome <span id="hellonamenamsnsn"></span></strong></h5>
+                    </div>
+                </div>
+            </div>
+            <h5 class="mx-3 my-3 text-center">
+                <strong>Unscramble the letter: <span id="q3q3"></span></strong>
+            </h5>
+            <div class="text-left my-2 mx-3" style="justify-content:left; display:block;">
+                <div class=" text-left mx-2" style="width:400px;">
+                    <label for="cq3"><img
+                            src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" />
+                        Answer The Question</label>
+                    <div class="input-group my-2 mb-2">
+                        <span class="input-group-text " id="basic-addon1"><img
+                                src="https://img.icons8.com/fluency-systems-filled/22/000000/stack-exchange-answer.png" /></span>
+                        <input type="text" class="form-control" placeholder="Answer" aria-label="Username" id="cq3"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="text-right my-3">
+                    <div class="text-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-lightbulb my-3" viewBox="0 0 16 16">
+                            <path
+                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+                        </svg>
+                        <div class="hints" style="display: inline-block;"> <strong class="my-3"
+                                title="Hint">Hint:</strong> <span title="Hint" id="hellhint" class="my-3"></span> </div>
+                        <span class="hide"></span>
+                    </div>
+                    <div style="display: inline-block;width: 100%;">
+                        <div class="text-right my-0 mb-0 mx-5">
+                            <div class="mx-2">
+                                <img src="Assets/icons8-chair-64.png" style="opacity: 0;" width="10" height="10" />
+                            </div>
+                            <div class="text-right my-1">
+                                <button title="Check" class="btn btn-danger btn-lg" onclick="chkq3ofgame()"
+                                    style="border-radius: 20px;">
+                                    Check <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28"
+                                        fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container myxyz text-light bg-light my-3 p-3 divimg" id="donegamefunction" style="display: none; ">
+            <div class="d-flex align-items-center"><svg data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi yes bi-info-circle mx-2 " viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                <button type="button" class="btn-close btn-close-black ms-auto myxyz mx-1" onclick="exit();"></button>
+
+            </div>
+
+
+
+            <div class="text-center ">
+                <div class="bg-dark mx-4 text-light p-2" style="border-radius: 24px;">
+                    <div id="hvfbtvbgvhbvbhvbhtbtbfbrjfr">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-person-circle my-2" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <h5 class="my-1"><strong>Welcome <span id="byehlllelel"></span></strong></h5>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mx-3 my-3 text-center text-light">
+                <strong>You Have Succesfully Completed the Game</strong>
+            </h5>
+            <div class="text-left my-2 mx-3" style="justify-content:left; display:block;">
+                <div class=" text-left mx-2" style="width:400px;">
+
+
+                </div>
+                <div class="text-center my-3">
+                </div>
+                <div class="text-right my-3">
+                    <div class="text-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-lightbulb my-3 hide" viewBox="0 0 16 16">
+                            <path
+                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+                        </svg>
+                        <div class="hints" style="display: inline-block; display: none;"> <strong class="my-3"
+                                title="Hint">Hint:</strong> <span title="Hint" id="hellhint" class="my-3"></span> </div>
+                        <span class="hide"></span>
+                    </div>
+                    <div style="display: inline-block;width: 100%;">
+                        <div class="text-right my-0 mb-0 mx-5">
+                            <div class="text-center" style="display:block;">
+                                <div class="mx-2">
+
+                                    <h7>Please Click Any Of The Buttons Below To Proceed</h7>
+
+                                    <img src="Assets/icons8-chair-64.png" style="opacity: 0;" width="10" height="10">
+                                </div>
+                                <div class="my-3"><button class="btn btn-danger ff" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                                        </svg> View Analytics
+                                    </button><button class="btn btn-danger ff mx-2"
+                                        onclick="location.href='points.html'">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                            data-icon="cash-register" width="16" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            class="svg-inline--fa fa-cash-register fa-w-16 fa-3x">
+                                            <path fill="currentColor"
+                                                d="M511.1 378.8l-26.7-160c-2.6-15.4-15.9-26.7-31.6-26.7H208v-64h96c8.8 0 16-7.2 16-16V16c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96v64H59.1c-15.6 0-29 11.3-31.6 26.7L.8 378.7c-.6 3.5-.9 7-.9 10.5V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32v-90.7c.1-3.5-.2-7-.8-10.5zM280 248c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16zm-32 64h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16zm-32-80c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16zM80 80V48h192v32H80zm40 200h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16zm16 64v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16zm216 112c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h176c4.4 0 8 3.6 8 8v16zm24-112c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16zm48-80c0 8.8-7.2 16-16 16h-16c-8.8 0-16-7.2-16-16v-16c0-8.8 7.2-16 16-16h16c8.8 0 16 7.2 16 16v16z">
+                                            </path>
+                                        </svg> View Score
+                                    </button></div>
+                                <div class="my-2 text-center">
+                                    <button class="btn btn-danger ff" onclick="mygamereplay()">Replay <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-bootstrap-reboot" viewBox="0 0 16 16">
+                                            <path
+                                                d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8z" />
+                                            <path
+                                                d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                            <div class="text-right my-1 no" style="opacity: 0;cursor: default;">
+                                <button class="btn btn-danger disabled btn-lg no" style="border-radius: 20px;">
+                                    Check <svg xmlns="http://www.w3.org/2000/svg" width="21" height="28"
+                                        fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                                    </svg> </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
