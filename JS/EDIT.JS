@@ -9,7 +9,7 @@ allowsavetousename = true;
 //save alerts
 displaysavealert = false;
 //password
-requirepassword = true;
+requirepassword = false;
 //recaptha
 recaptha = false;
 //login code
