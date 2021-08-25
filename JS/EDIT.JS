@@ -13,7 +13,7 @@ requirepassword = true;
 //recaptha
 recaptha = true;
 //login code
-logincode = "k";
+logincode = "WEBINAR";
 //errorsolver
 errorsolverlogdisplay = false;
 //Game
