@@ -23,7 +23,7 @@ errorsolverlogdisplay = false;
 Signature = "malavika"
 
 //Game Instruction
-GameInstruction = "Game Instructions"
+GameInstruction = "g"
 
 //Questions
 
