@@ -23,7 +23,7 @@ errorsolverlogdisplay = false;
 Signature = "malavika"
 
 //Game Instruction
-GameInstruction = "game instructions"
+GameInstruction = "REFER TO THE INSTRUCTIONS GIVEN IN POWER POINT SLIDE"
 
 //Questions
 
