@@ -33,9 +33,9 @@ Question1Answer = "encyclopedia"
 HintForQuestion1 = "A Book Which Contains all the information."
 
 //Q2
-Question2 = "llohe"
-Question2Answer = "hello"
-HintForQuestion2 = "Greetings."
+Question2 = "ratgyvi"
+Question2Answer = "gravity"
+HintForQuestion2 = "the universal force of attraction acting between all matter."
 
 //Q3
 Question3 = "rergenye"
