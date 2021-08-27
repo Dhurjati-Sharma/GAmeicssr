@@ -1,7 +1,7 @@
 //Key for unlocking the game
 EnterYourkey = "10H84-45H83-Z1MH2-D4QN9-G38MK"
 //For Better Appearance use 22 characters only!
-GameTitle = "Unscrambe The Letters";
+GameTitle = "Tumbling letters";
 //when no title is set
 noname = "Untitled Game"
 //allow students to save their name in the browser
