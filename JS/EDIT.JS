@@ -23,7 +23,7 @@ errorsolverlogdisplay = false;
 Signature = "malavika"
 
 //Game Instruction
-GameInstruction = "REFER TO THE INSTRUCTIONS GIVEN IN POWER POINT SLIDE"
+GameInstruction = "Some questions will be displayed. Correct answer will help u to move ahead"
 
 //Questions
 
